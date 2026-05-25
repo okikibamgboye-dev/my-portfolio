@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Okikiolamilekan Bamgboye — Copywriter & Communications Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e1117;
+    --bg2: #141820;
+    --bg3: #1a2030;
+    --gold: #f5c87a;
+    --gold2: #e8b45a;
+    --text: #e8e0d4;
+    --muted: #8a9aaa;
+    --border: rgba(245,200,122,0.15);
+    --card: #161c26;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--gold); color: #0e1117; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 48px;
+    background: rgba(14,17,23,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: var(--gold);
+    letter-spacing: 0.3px;
+  }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(245,200,122,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 1px; background: var(--border);
+  }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+  .hero-tag {
+    display: inline-block;
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); border: 0.5px solid var(--border);
+    padding: 5px 14px; border-radius: 2px; margin-bottom: 28px;
+    opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 1.0;
+    color: var(--text);
+    margin-bottom: 12px;
+    opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero-name em { color: var(--gold); font-style: italic; }
+  .hero-title {
+    font-size: clamp(13px, 1.5vw, 16px);
+    color: var(--muted); font-weight: 400;
+    letter-spacing: 0.5px; margin-bottom: 32px;
+    opacity: 0; animation: fadeUp 0.8s 0.5s forwards;
+  }
+  .hero-bio {
+    max-width: 600px;
+    font-size: 15px; color: var(--text);
+    line-height: 1.8; font-weight: 300;
+    border-left: 2px solid var(--gold);
+    padding-left: 20px; margin-bottom: 48px;
+    opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
+  }
+  .hero-stats {
+    display: flex; gap: 48px; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.8s 0.7s forwards;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px; color: var(--gold); line-height: 1;
+  }
+  .stat-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 48px;
+    background: var(--gold); color: #0e1117;
+    padding: 12px 28px; font-size: 12px;
+    font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    text-decoration: none; border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+    opacity: 0; animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .hero-cta:hover { background: var(--gold2); transform: translateY(-2px); }
+
+  /* SECTIONS */
+  section { padding: 96px 48px; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after {
+    content: ''; flex: 1; max-width: 60px;
+    height: 1px; background: var(--gold); opacity: 0.4;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.1; margin-bottom: 56px;
+    color: var(--text);
+  }
+
+  /* SERVICES */
+  #services { background: var(--bg2); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .service-card {
+    background: var(--card);
+    padding: 32px 28px;
+    transition: background 0.2s;
+  }
+  .service-card:hover { background: var(--bg3); }
+  .service-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px; color: var(--border);
+    margin-bottom: 16px; line-height: 1;
+    transition: color 0.2s;
+  }
+  .service-card:hover .service-num { color: var(--gold); }
+  .service-name {
+    font-size: 14px; font-weight: 600;
+    color: var(--text); margin-bottom: 10px;
+    letter-spacing: 0.3px;
+  }
+  .service-desc { font-size: 12.5px; color: var(--muted); line-height: 1.7; }
+
+  /* NICHES */
+  .niches-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .niche-pill {
+    background: transparent;
+    border: 0.5px solid var(--border);
+    color: var(--muted);
+    font-size: 12px; padding: 8px 18px;
+    border-radius: 2px; letter-spacing: 0.5px;
+    transition: all 0.2s; cursor: default;
+  }
+  .niche-pill:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* WORK / ARTICLES */
+  #work { background: var(--bg); }
+  .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+  .work-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    padding: 28px 24px;
+    display: flex; flex-direction: column; gap: 12px;
+    transition: border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+  }
+  .work-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .work-type {
+    font-size: 9px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .work-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px; color: var(--text); line-height: 1.35;
+  }
+  .work-venue { font-size: 11px; color: var(--muted); }
+  .work-arrow {
+    margin-top: auto; font-size: 18px;
+    color: var(--border); transition: color 0.2s;
+  }
+  .work-card:hover .work-arrow { color: var(--gold); }
+
+  /* VIDEOS */
+  #videos { background: var(--bg2); }
+  .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .video-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    aspect-ratio: 9/16;
+    max-height: 320px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 14px; text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .video-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(245,200,122,0.03) 0%, transparent 60%);
+  }
+  .video-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .video-icon {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(245,200,122,0.1);
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; color: var(--gold);
+    transition: background 0.2s;
+  }
+  .video-card:hover .video-icon { background: rgba(245,200,122,0.2); }
+  .video-label { font-size: 11px; color: var(--muted); letter-spacing: 0.5px; }
+  .video-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px; color: var(--border);
+    position: absolute; bottom: 16px; right: 16px;
+  }
+
+  /* CERTIFICATES */
+  #certificates { background: var(--bg); }
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .cert-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    padding: 24px 20px;
+    display: flex; flex-direction: column; gap: 10px;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .cert-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+  .cert-icon { font-size: 24px; }
+  .cert-name { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.4; }
+  .cert-org { font-size: 11px; color: var(--muted); }
+  .cert-year {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px; color: var(--border);
+    margin-top: auto; line-height: 1;
+  }
+
+  /* CONTACT */
+  #contact { background: var(--bg2); }
+  .contact-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+  }
+  .contact-left {}
+  .contact-tagline {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 1.2; color: var(--text); margin-bottom: 24px;
+  }
+  .contact-tagline em { color: var(--gold); font-style: italic; }
+  .contact-desc { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; }
+  .contact-links { display: flex; flex-direction: column; gap: 16px; }
+  .contact-link {
+    display: flex; align-items: center; gap: 14px;
+    text-decoration: none; color: var(--text);
+    font-size: 13px; padding: 14px 18px;
+    border: 0.5px solid var(--border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .contact-link:hover { border-color: var(--gold); color: var(--gold); }
+  .contact-link-icon { font-size: 16px; color: var(--gold); width: 20px; text-align: center; }
+  .contact-right {
+    border: 0.5px solid var(--border);
+    padding: 40px 36px;
+    background: var(--card);
+  }
+  .contact-right .section-label { margin-bottom: 28px; }
+  .services-list { display: flex; flex-direction: column; gap: 12px; }
+  .services-list-item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13px; color: var(--muted); padding-bottom: 12px;
+    border-bottom: 0.5px solid rgba(255,255,255,0.05);
+  }
+  .services-list-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .services-list-item::before { content: '▸'; color: var(--gold); font-size: 10px; flex-shrink: 0; }
+
+  /* FOOTER */
+  footer {
+    padding: 28px 48px;
+    border-top: 0.5px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; color: var(--muted);
+  }
+  footer span { color: var(--gold); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s, transform 0.7s;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero, section { padding-left: 20px; padding-right: 20px; }
+    .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Okiki Bamgboye</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#videos">Videos</a>
+    <a href="#certificates">Credentials</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Copywriter & Communications Specialist</div>
+    <h1 class="hero-name">Okikiolamilekan<br><em>Bamgboye</em></h1>
+    <p class="hero-title">Research · Policy · Public Impact</p>
+    <p class="hero-bio">
+      I write for organizations working at the intersection of research, policy, and public impact —
+      turning complex ideas into content that informs, advocates, and moves people to act.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">42</div>
+        <div class="stat-label">World Leaders Reached</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">30K+</div>
+        <div class="stat-label">People Reached</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Conference Papers</div>
+      </div>
+    </div>
+    <a href="#contact" class="hero-cta">Work With Me →</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label reveal">What I Do</div>
+    <h2 class="section-title reveal">Services</h2>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-name">Content & Copywriting</div>
+        <div class="service-desc">Blog posts, articles, website copy, email newsletters, campaign copy, and press releases across industries.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-name">SEO Writing</div>
+        <div class="service-desc">Keyword-optimized articles and landing pages. Proven high-volume delivery — 30–50 pieces monthly without quality loss.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-name">Research & Academic Writing</div>
+        <div class="service-desc">White papers, policy briefs, research summaries, and literature-adjacent content. I understand academic conventions from the inside.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-name">Communications Strategy</div>
+        <div class="service-desc">Content planning, brand voice development, and messaging frameworks for organizations and campaigns.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <div class="service-name">Public Awareness Campaigns</div>
+        <div class="service-desc">Translating complex policy and science into messaging that reaches and moves non-specialist audiences at scale.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <div class="service-name">Script & Broadcast Writing</div>
+        <div class="service-desc">Radio scripts, video scripts, and audio content — backed by real broadcast journalism experience at a national broadcaster.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 64px;">
+      <div class="section-label reveal">Industries</div>
+      <div class="niches-wrap reveal">
+        <span class="niche-pill">Climate & Environment</span>
+        <span class="niche-pill">International Development</span>
+        <span class="niche-pill">Education</span>
+        <span class="niche-pill">Media & Journalism</span>
+        <span class="niche-pill">Mobile & Tech</span>
+        <span class="niche-pill">Housing</span>
+        <span class="niche-pill">Hospitality & Travel</span>
+        <span class="niche-pill">Transportation</span>
+        <span class="niche-pill">Social Media</span>
+        <span class="niche-pill">Public Health</span>
+        <span class="niche-pill">Academic Research</span>
+        <span class="niche-pill">Policy & Governance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-label reveal">Selected Work</div>
+    <h2 class="section-title reveal">Articles & Publications</h2>
+    <div class="work-grid">
+
+      <a class="work-card reveal" href="https://doi.org/10.3126/josem.v1i4.500072" target="_blank" rel="noopener">
+        <div class="work-type">Journal Article · 2022</div>
+        <div class="work-title">Media Advocacy in Climate Action: Showcasing Best Practices in West Africa</div>
+        <div class="work-venue">Journal of Sustainability and Environmental Management, 1(4)</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card reveal" href="https://www.hse.ru/en/edu/vkr/11580037903" target="_blank" rel="noopener">
+        <div class="work-type">Research Paper · 2026</div>
+        <div class="work-title">Framing the Climate Crisis in Nigeria: Mainstream and Alternative Constructions</div>
+        <div class="work-venue">HSE Media Institute Winter School</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card reveal" href="https://disk.360.yandex.com/i/fEPSElXKBrYEjw4" target="_blank" rel="noopener">
+        <div class="work-type">Conference Paper · ACUNS 2026</div>
+        <div class="work-title">Governing Climate Risk Without Public Trust: Media Narratives and Knowledge Gaps After the 2025 Mokwa Floods</div>
+        <div class="work-venue">ACUNS Annual General Meeting, Lisbon</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card reveal" href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:804a465b-1c7e-4947-b106-3d764e07f5ec5" target="_blank" rel="noopener">
+        <div class="work-type">Conference Paper · DSA 2025</div>
+        <div class="work-title">Knowledge, Attitudes, and Perceptions of the National Clean Cooking Policy Amongst Poor Households in Ido, Southwestern Nigeria</div>
+        <div class="work-venue">Developmental Studies Association, University of Bath</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card reveal" href="https://disk.360.yandex.com/i/02arxklDsWvqfQ6" target="_blank" rel="noopener">
+        <div class="work-type">Conference Paper · ACUNS 2026</div>
+        <div class="work-title">From Designation to Intervention: 'Country of Particular Concern' and the Politics of Conflict Framing in Nigeria</div>
+        <div class="work-venue">ACUNS Annual General Meeting, Lisbon</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card reveal" href="https://drive.google.com/file/d/1kXORGJR_JUILkcFnxw_aU0risOT0uKyb/view?usp=sharing" target="_blank" rel="noopener">
+        <div class="work-type">Conference Paper · ISA 2026</div>
+        <div class="work-title">Democraze and the Coup Temptation: Are Sahel Military Takeovers a Fix or a Deeper Failure?</div>
+        <div class="work-venue">International Studies Association, University of Pretoria</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card reveal" href="https://disk.360.yandex.com/i/BGhNTuioNXOwOg8" target="_blank" rel="noopener">
+        <div class="work-type">Conference Paper · ACUNS 2026</div>
+        <div class="work-title">New Funds, Old Barriers: Nigeria and the Post-COP28 Architecture of Adaptation Finance</div>
+        <div class="work-venue">ACUNS Annual General Meeting, Lisbon</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card reveal" href="https://ispr.info/2025/10/28/call-online-conference-media-technologies-and-future-storytelling/" target="_blank" rel="noopener">
+        <div class="work-type">Conference · 2025</div>
+        <div class="work-title">Media Technologies and Future Storytelling Conference</div>
+        <div class="work-venue">Organizer & Contributor</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card reveal" href="https://www.linkedin.com/pulse/calling-out-more-investments-education-climate-change-bamgboye-rlcnf/" target="_blank" rel="noopener">
+        <div class="work-type">Article · 2023</div>
+        <div class="work-title">Calling Out for More Investments in Education / Climate Change</div>
+        <div class="work-venue">LinkedIn Pulse</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+      <a class="work-card reveal" href="https://theirworld.org/news/whatsclimate-change-got-to-do-with-the-early-years/" target="_blank" rel="noopener">
+        <div class="work-type">Article · 2023</div>
+        <div class="work-title">What's Climate Change Got to Do with The Early Years?</div>
+        <div class="work-venue">Theirworld</div>
+        <div class="work-arrow">↗</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos">
+  <div class="section-inner">
+    <div class="section-label reveal">Visual Work</div>
+    <h2 class="section-title reveal">Video Content</h2>
+    <div class="video-grid">
+      <a class="video-card reveal" href="https://www.instagram.com/reel/DXMYrk8DJyT/" target="_blank" rel="noopener">
+        <div class="video-icon">▶</div>
+        <div class="video-label">Watch on Instagram</div>
+        <div class="video-num">01</div>
+      </a>
+      <a class="video-card reveal" href="https://www.instagram.com/reel/DI3JsSatfzV/" target="_blank" rel="noopener">
+        <div class="video-icon">▶</div>
+        <div class="video-label">Watch on Instagram</div>
+        <div class="video-num">02</div>
+      </a>
+      <a class="video-card reveal" href="https://www.instagram.com/reel/DIBMWcvtyQl/" target="_blank" rel="noopener">
+        <div class="video-icon">▶</div>
+        <div class="video-label">Watch on Instagram</div>
+        <div class="video-num">03</div>
+      </a>
+      <a class="video-card reveal" href="https://www.instagram.com/reel/DAXo-RhtywN/" target="_blank" rel="noopener">
+        <div class="video-icon">▶</div>
+        <div class="video-label">Watch on Instagram</div>
+        <div class="video-num">04</div>
+      </a>
+      <a class="video-card reveal" href="https://www.instagram.com/reel/DPIuvzNDQt6/" target="_blank" rel="noopener">
+        <div class="video-icon">▶</div>
+        <div class="video-label">Watch on Instagram</div>
+        <div class="video-num">05</div>
+      </a>
+      <a class="video-card reveal" href="https://www.instagram.com/reel/DGdAqiGN9Qi/" target="_blank" rel="noopener">
+        <div class="video-icon">▶</div>
+        <div class="video-label">Watch on Instagram</div>
+        <div class="video-num">06</div>
+      </a>
+      <a class="video-card reveal" href="https://www.instagram.com/reel/DKPj09WtTy1/" target="_blank" rel="noopener">
+        <div class="video-icon">▶</div>
+        <div class="video-label">Watch on Instagram</div>
+        <div class="video-num">07</div>
+      </a>
+      <a class="video-card reveal" href="https://www.instagram.com/reel/DWQ6vAfDHRp/" target="_blank" rel="noopener">
+        <div class="video-icon">▶</div>
+        <div class="video-label">Watch on Instagram</div>
+        <div class="video-num">08</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <div class="section-inner">
+    <div class="section-label reveal">Credentials</div>
+    <h2 class="section-title reveal">Certifications & Awards</h2>
+    <div class="cert-grid">
+      <a class="cert-card reveal" href="https://drive.google.com/file/d/1undk-LCH05chpow7KV5rFVr6FLu7MQOT/view?usp=drive_link" target="_blank" rel="noopener">
+        <div class="cert-icon">📜</div>
+        <div class="cert-name">Professional Diploma in Social Media Marketing & Copywriting</div>
+        <div class="cert-org">MTF Institute of Management, Technology and Finance</div>
+        <div class="cert-year">2024</div>
+      </a>
+      <a class="cert-card reveal" href="https://drive.google.com/file/d/1XXWLWDGWp2duTywN631iIRgrnUJJaHin/view?usp=drive_link" target="_blank" rel="noopener">
+        <div class="cert-icon">📜</div>
+        <div class="cert-name">Strategic Public Relations & Communication Management</div>
+        <div class="cert-org">Dr. José Prabhu J</div>
+        <div class="cert-year">2024</div>
+      </a>
+      <a class="cert-card reveal" href="https://drive.google.com/file/d/1ZReHmEjAf4ocdxJqMQWqL7EqOru1LOZ4/view?usp=drive_link" target="_blank" rel="noopener">
+        <div class="cert-icon">📜</div>
+        <div class="cert-name">Public Relations: Speak Effectively at Press Conferences</div>
+        <div class="cert-org">TJ Walker, Media Training Worldwide Digital</div>
+        <div class="cert-year">2024</div>
+      </a>
+      <a class="cert-card reveal" href="https://drive.google.com/file/d/1sy3pWfPPkF2-2NBdGSrZDlDRZJ6hopX8/view?usp=drive_link" target="_blank" rel="noopener">
+        <div class="cert-icon">🏆</div>
+        <div class="cert-name">Winner — Institute of Media's Winter School</div>
+        <div class="cert-org">National Research University — Higher School of Economics</div>
+        <div class="cert-year">2024</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-wrap">
+      <div class="contact-left reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="contact-tagline">Let's make your <em>research land</em>.</h2>
+        <p class="contact-desc">I work with NGOs, research institutions, think tanks, universities, and advocacy organizations who need their work to reach beyond the page and actually move people.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:okikibamgboye@gmail.com">
+            <span class="contact-link-icon">✉</span>
+            okikibamgboye@gmail.com
+          </a>
+          <a class="contact-link" href="tel:+79651190559">
+            <span class="contact-link-icon">☏</span>
+            +7 (965) 119-0559
+          </a>
+          <a class="contact-link" href="https://linkedin.com/in/okikiolamilekan-bamgboye-581499211" target="_blank" rel="noopener">
+            <span class="contact-link-icon">in</span>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+      <div class="contact-right reveal">
+        <div class="section-label">I Can Help With</div>
+        <div class="services-list">
+          <div class="services-list-item">Blog posts, articles & website copy</div>
+          <div class="services-list-item">SEO-optimized content at scale</div>
+          <div class="services-list-item">Policy briefs & white papers</div>
+          <div class="services-list-item">Campaign & advocacy messaging</div>
+          <div class="services-list-item">Email newsletters & social content</div>
+          <div class="services-list-item">Radio & video scripts</div>
+          <div class="services-list-item">Press releases & public communications</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>© 2026 <span>Okikiolamilekan Bamgboye</span>. All rights reserved.</div>
+  <div>Copywriter & Communications Specialist</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
