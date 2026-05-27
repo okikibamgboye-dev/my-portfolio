@@ -218,42 +218,6 @@
   }
   .work-card:hover .work-arrow { color: var(--gold); }
 
-  /* VIDEOS */
-  #videos { background: var(--bg2); }
-  .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-  .video-card {
-    background: var(--card);
-    border: 0.5px solid var(--border);
-    aspect-ratio: 9/16;
-    max-height: 320px;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 14px; text-decoration: none;
-    transition: border-color 0.2s, transform 0.2s;
-    position: relative; overflow: hidden;
-  }
-  .video-card::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(245,200,122,0.03) 0%, transparent 60%);
-  }
-  .video-card:hover { border-color: var(--gold); transform: translateY(-3px); }
-  .video-icon {
-    width: 52px; height: 52px; border-radius: 50%;
-    background: rgba(245,200,122,0.1);
-    border: 1px solid var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; color: var(--gold);
-    transition: background 0.2s;
-  }
-  .video-card:hover .video-icon { background: rgba(245,200,122,0.2); }
-  .video-label { font-size: 11px; color: var(--muted); letter-spacing: 0.5px; }
-  .video-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 28px; color: var(--border);
-    position: absolute; bottom: 16px; right: 16px;
-  }
-
   /* CERTIFICATES */
   #certificates { background: var(--bg); }
   .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
@@ -349,8 +313,8 @@
   <div class="nav-links">
     <a href="#services">Services</a>
     <a href="#work">Work</a>
-    <a href="#videos">Videos</a>
     <a href="#certificates">Credentials</a>
+    <a href="#video-portfolio">Video Work</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -526,51 +490,29 @@
   </div>
 </section>
 
-<!-- VIDEOS -->
-<section id="videos">
+<!-- VIDEO PORTFOLIO CROSSLINK -->
+<section id="video-portfolio" style="background: var(--bg);">
   <div class="section-inner">
-    <div class="section-label reveal">Visual Work</div>
-    <h2 class="section-title reveal">Video Content</h2>
-    <div class="video-grid">
-      <a class="video-card reveal" href="https://www.instagram.com/reel/DXMYrk8DJyT/" target="_blank" rel="noopener">
-        <div class="video-icon">▶</div>
-        <div class="video-label">Watch on Instagram</div>
-        <div class="video-num">01</div>
-      </a>
-      <a class="video-card reveal" href="https://www.instagram.com/reel/DI3JsSatfzV/" target="_blank" rel="noopener">
-        <div class="video-icon">▶</div>
-        <div class="video-label">Watch on Instagram</div>
-        <div class="video-num">02</div>
-      </a>
-      <a class="video-card reveal" href="https://www.instagram.com/reel/DIBMWcvtyQl/" target="_blank" rel="noopener">
-        <div class="video-icon">▶</div>
-        <div class="video-label">Watch on Instagram</div>
-        <div class="video-num">03</div>
-      </a>
-      <a class="video-card reveal" href="https://www.instagram.com/reel/DAXo-RhtywN/" target="_blank" rel="noopener">
-        <div class="video-icon">▶</div>
-        <div class="video-label">Watch on Instagram</div>
-        <div class="video-num">04</div>
-      </a>
-      <a class="video-card reveal" href="https://www.instagram.com/reel/DPIuvzNDQt6/" target="_blank" rel="noopener">
-        <div class="video-icon">▶</div>
-        <div class="video-label">Watch on Instagram</div>
-        <div class="video-num">05</div>
-      </a>
-      <a class="video-card reveal" href="https://www.instagram.com/reel/DGdAqiGN9Qi/" target="_blank" rel="noopener">
-        <div class="video-icon">▶</div>
-        <div class="video-label">Watch on Instagram</div>
-        <div class="video-num">06</div>
-      </a>
-      <a class="video-card reveal" href="https://www.instagram.com/reel/DKPj09WtTy1/" target="_blank" rel="noopener">
-        <div class="video-icon">▶</div>
-        <div class="video-label">Watch on Instagram</div>
-        <div class="video-num">07</div>
-      </a>
-      <a class="video-card reveal" href="https://www.instagram.com/reel/DWQ6vAfDHRp/" target="_blank" rel="noopener">
-        <div class="video-icon">▶</div>
-        <div class="video-label">Watch on Instagram</div>
-        <div class="video-num">08</div>
+    <div class="section-label reveal">Beyond the Page</div>
+    <h2 class="section-title reveal">Video Work</h2>
+    <div class="reveal" style="display:flex; flex-direction:column; gap:24px; max-width:720px;">
+      <p style="font-size:15px; color:var(--muted); line-height:1.8;">
+        My work extends beyond writing. I produce and edit video content across TikTok, Instagram Reels, and YouTube — applying the same storytelling discipline and audience instincts that inform my writing to post-production, motion design, and short-form content strategy.
+      </p>
+      <p style="font-size:15px; color:var(--muted); line-height:1.8;">
+        I have built a dedicated portfolio that showcases my full capabilities as a video editor — including colour grading, keyframe animation, beat sync, SFX, masking, and the copywriting-informed approach I bring to hook engineering and retention strategy.
+      </p>
+      <a href="video-editor/" style="
+        display:inline-flex; align-items:center; gap:14px;
+        background: transparent; color: var(--gold);
+        border: 1px solid var(--gold);
+        padding: 16px 32px; font-size: 12px;
+        font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+        text-decoration: none; width: fit-content; margin-top:8px;
+        transition: background 0.2s, color 0.2s;
+        " onmouseover="this.style.background='var(--gold)';this.style.color='#0e1117'"
+           onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">
+        View Video Portfolio →
       </a>
     </div>
   </div>
